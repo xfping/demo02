@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            // 下面的"flutterInAppWebViewPlatformReady"为固定写法
+            // "myHandler"与flutter中注册的JS处理方法名称一致
+            window.addEventListener("flutterInAppWebViewPlatformReady", function () {
+                window.flutter_inappwebview
+                    .callHandler("myHandler", "这里是传给flutter的参数")
+                    .then(function (res) {
+                        console.log("res========flutter给html的数据", res);
+                    })
+            })
+        </script>
+        <title>demo</title>
+    </head>
+
+    <body>
+        <h1>我是一个demo</h1>
+        <h1>我是一个html文件</h1>
+        <h1>我想展示在flutter应用里</h1>
+        <div class="flutter-view"></div>
+    </body>
+</html>
